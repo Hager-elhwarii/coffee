@@ -15,7 +15,7 @@ document.querySelectorAll('.link').forEach((link) => {
   })
 })
 
-// highlight active sections
+// highlight active section
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
