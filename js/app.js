@@ -17,7 +17,6 @@ const observer = new IntersectionObserver(
     })
   },
   { threshold: 0.5 }
-
 )
 
 // nav links scroll behavior
