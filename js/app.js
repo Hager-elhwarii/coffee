@@ -4,14 +4,14 @@ const sections = document.querySelectorAll('.section')
 // build nav links dynamically
 sections.forEach((section) => {
   const name = section.id.replace('-', ' ')
-  links.innerHTML += `<li class="link"><a href="#${section.id}">${name}</a></li>`
+  links.innerHTML += `<li class="link"><a class="${section.id}">${name}</a></li>`
 })
 
 // nav links scroll behavior
 document.querySelectorAll('.link').forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault()
-    document.querySelector(event.target.hash).scrollIntoView({ behavior: 'smooth' })
+    document.querySelector(`#${event.target.className}`).scrollIntoView({ behavior: 'smooth' })
   })
 })
 
@@ -25,4 +25,4 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.5 }
 )
-
+sections.forEach((section) => observer.observe(section))
